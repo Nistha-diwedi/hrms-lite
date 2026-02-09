@@ -9,6 +9,8 @@ class Employee(Base):
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
     department = Column(String, nullable=False)
+    designation = Column(String, nullable=False)
+
 
 class Attendance(Base):
     __tablename__ = "attendance"

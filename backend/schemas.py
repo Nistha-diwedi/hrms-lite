@@ -6,6 +6,8 @@ class EmployeeCreate(BaseModel):
     name: str
     email: EmailStr
     department: str
+    designation: str
+
 
 class AttendanceCreate(BaseModel):
     employee_id: int

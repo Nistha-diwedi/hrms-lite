@@ -7,6 +7,7 @@ function EmployeeForm({ onAdd }) {
     name: "",
     email: "",
     department: "",
+    designation: "",
   });
 
   const handleChange = (e) =>
@@ -15,7 +16,13 @@ function EmployeeForm({ onAdd }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await API.post("/employees", form);
-    setForm({ employee_id: "", name: "", email: "", department: "" });
+    setForm({
+      employee_id: "",
+      name: "",
+      email: "",
+      department: "",
+      designation: "",
+    });
     onAdd();
   };
 
@@ -48,6 +55,13 @@ function EmployeeForm({ onAdd }) {
           name="department"
           placeholder="Department"
           value={form.department}
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="designation"
+          placeholder="Designation"
+          value={form.designation}
           onChange={handleChange}
           required
         />

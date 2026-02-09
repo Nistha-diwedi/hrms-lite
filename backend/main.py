@@ -66,3 +66,14 @@ def get_attendance(employee_id: int, db: Session = Depends(get_db)):
     return db.query(models.Attendance).filter(
         models.Attendance.employee_id == employee_id
     ).all()
+
+
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8000))
+    )

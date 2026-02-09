@@ -16,6 +16,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"status": "HRMS Lite backend is running"}
 
 def get_db():
     db = SessionLocal()
